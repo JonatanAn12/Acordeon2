@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#acordeon {
+.acordeon {
     display: flex;
     background: linear-gradient(45deg, #c20303, #525151);
     background-size: cover;
@@ -16,6 +16,7 @@ body {
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    margin: 10px;
 }   
 
 .caja-toraxica {
@@ -30,7 +31,8 @@ body {
 }
 
 #fuelle {
-    width: 600px;
+    width: 550px;
+    position: relative;
     background: repeating-linear-gradient(
         to right,
         #000000,
@@ -39,21 +41,17 @@ body {
         #2b2525 20px,
         #131212 10px
     );
-    background-repeat: repeat-x;
-    margin: 0 ;
 }   
     #fuelle::before {
         content: '';
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100px; /* Ajusta el tamaño según sea necesario */
-        height: 100px; /* Ajusta el tamaño según sea necesario */
+        width: 200px; /* Ajusta el tamaño según sea necesario */
+        height: 200px; /* Ajusta el tamaño según sea necesario */
         background-color: rgba(226, 226, 10, 0.7); /* Color de la figura con opacidad */
-        position: relative;
         clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            /* Crea una estrella de 4 lados */
-        transform: translate(-10%, -60%); /* Centra la figura */
+        transform: translate(-50%, -60%); /* Centra la figura */
     }
 
 .teclado {
