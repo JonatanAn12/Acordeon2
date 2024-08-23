@@ -11,7 +11,7 @@ const noteFrequencies = {
     'A9': 'Notas/Mi4.mp3', 'B9': 'Notas/FaH3c2.mp3', 'C9': 'Notas/Si3c3.mp3', 'D9': 'Notas/Fac3.mp3',  
     'B10': 'Notas/La4c2.mp3', 'D10': 'Notas/Fac3.mp3', 'D11': 'Notas/Fac3.mp3', 
 };
-
+ 
 let sonidosActivos = {};
 let fuelleAbierto = false;
 
@@ -39,18 +39,18 @@ function detenerNota(nota) {
 
 function reproducirSonidosFuelle(fuelleCerrado) {
     if (fuelleCerrado) {
-        // Reproducir sonidos suaves cuando el fuelle está cerrado
+        //* Reproducir sonidos suaves cuando el fuelle está cerrado
         Object.keys(sonidosActivos).forEach(nota => {
             if (sonidosActivos[nota]) {
-                sonidosActivos[nota].volume = 0.3; // Suaviza el volumen
+                sonidosActivos[nota].volume = 0.3; //* Suaviza el volumen
             }
         });
     } else {
         // Reproducir sonidos normales
         Object.keys(sonidosActivos).forEach(nota => {
             if (sonidosActivos[nota]) {
-                sonidosActivos[nota].volume = 1; // Volumen normal
-            }
+                sonidosActivos[nota].volume = 1; //* Volumen normal
+            } 
         });
     }
 }
@@ -103,26 +103,26 @@ document.addEventListener('keyup', (e) => {
     }
 
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-        reproducirSonidosFuelle(true);
+        reproducirSonidosFuelle(false);
     }
 });
 
 const fuelle = document.getElementById("fuelle");
 let modifier = 5;
-fuelle.style.left = "0px"; // Asegura un valor inicial
+fuelle.style.left = "0px"; //* Asegura un valor inicial
 
 document.addEventListener('keydown', (event) => {
     const style = fuelle.style;
     switch(event.key) {
         case 'ArrowRight':
             const rightPos = parseInt(style.left) || 0;
-            if (rightPos < 30) { // Limita el movimiento a 30px hacia la derecha
+            if (rightPos < 30) { 
                 style.left = `${rightPos + modifier}px`; 
             }
             break;
         case 'ArrowLeft':
             const leftPos = parseInt(style.left) || 0;
-            if (leftPos > 0) { // Evita que el fuelle se mueva fuera del contenedor hacia la izquierda
+            if (leftPos > 0) { //* Evita que el fuelle se mueva fuera del contenedor hacia la izquierda
                 style.left = `${leftPos - modifier}px`;
             }
             break;

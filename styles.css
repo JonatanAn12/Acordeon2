@@ -51,7 +51,7 @@ body {
         height: 200px; /* Ajusta el tamaño según sea necesario */
         background-color: rgba(226, 226, 10, 0.7); /* Color de la figura con opacidad */
         clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        transform: translate(-50%, -60%); /* Centra la figura */
+        transform: translate(-50%, -60%); 
     }
 
 .teclado {
